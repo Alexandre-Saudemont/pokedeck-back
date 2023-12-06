@@ -78,7 +78,7 @@ const deckController = {
 				});
 
 				newDeckPokemon.save();
-				console.log('juste avant le return quand tout va bien');
+
 				return res.status(200).json({
 					success: `Ajout de ${pokemonIdCheck.nom} effectuée avec succès`,
 				});
