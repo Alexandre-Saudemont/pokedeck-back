@@ -7,8 +7,8 @@ const deckController = require('./Controllers/deckController');
 const jwtVerify = require('./Middleware/Middleware');
 
 router.get('/', (_, res) => {
-    res.send('We are in homepage')
-})
+	res.send('We are in homepage');
+});
 // GET
 router.get('/Pokemon', pokemonController.getAllPokemon);
 router.get(`/Pokemon/:id`, pokemonController.getPokemonById);
@@ -17,7 +17,7 @@ router.get(`/Types/:id`, pokemonController.getPokemonByTypes);
 router.get('/Users', usersController.getAllUser);
 router.get('/User/:id', jwtVerify, usersController.getUserById);
 router.get('/Deck/:id', jwtVerify, deckController.getDeck);
-
+router.get('/Pokedex', pokemonController.getPokedexData);
 // POST
 router.post(`/Inscription`, usersController.createUser);
 router.post('/Connexion', usersController.connectUser);
@@ -29,7 +29,6 @@ router.put('/User/:id', jwtVerify, usersController.updateUser);
 //DELETE
 router.delete('/User/:id', jwtVerify, usersController.deleteUser);
 router.delete('/Deck/Pokemon/:id', jwtVerify, deckController.deleteOnePokemonToDeck);
-router.delete('/Deck/AllPokemons/:id', jwtVerify, deckController.deleteAllPokemonsToDeck)
-
+router.delete('/Deck/AllPokemons/:id', jwtVerify, deckController.deleteAllPokemonsToDeck);
 
 module.exports = router;

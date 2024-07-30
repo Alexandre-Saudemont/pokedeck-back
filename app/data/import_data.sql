@@ -180,6 +180,7 @@ VALUES
 
 INSERT INTO "pokemon_type"
     ("pokemon_id", "type_id")
+    
 VALUES
     (1, 4),
     (1, 8),

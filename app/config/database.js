@@ -6,6 +6,7 @@ const sequelize = new Sequelize('pokedeck', 'postgres', 'poule', {
 	dialect: 'postgres',
 	define: {timestamps: false},
 });
+
 sequelize
 	.authenticate()
 	.then(() => {
