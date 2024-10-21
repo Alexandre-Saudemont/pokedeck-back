@@ -1,7 +1,7 @@
 require('dotenv').config();
 const {Sequelize} = require('sequelize');
 
-const sequelize = new Sequelize('pokedeck', 'alex', 'alex', {
+const sequelize = new Sequelize('pokedeck', 'postgres', 'poule', {
 	host: 'localhost',
 	dialect: 'postgres',
 	define: {timestamps: false},
