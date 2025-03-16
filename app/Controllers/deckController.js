@@ -92,7 +92,6 @@ const deckController = {
 			});
 
 			newDeckPokemon.save();
-
 			return res.status(200).json({
 				success: `Ajout de ${pokemonIdCheck.nom} effectuée avec succès`,
 			});
@@ -127,7 +126,6 @@ const deckController = {
 			}
 			const deckId = deck.dataValues.id;
 			const {id, pokemon_id} = req.body;
-
 			const pokemonIdCheck = await Pokemon.findByPk(pokemon_id);
 
 			if (!pokemonIdCheck) {
@@ -182,7 +180,6 @@ const deckController = {
 					deck_id: deckId,
 				},
 			});
-
 			if (!deckPokemon) {
 				return res.status(404).json({
 					error: 'Votre deck est déjà vide',
